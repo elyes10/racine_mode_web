@@ -34,6 +34,85 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<!-- FAQ Sidebar Custom Styles -->
+	<style>
+		.faq-sidebar {
+			background: #f8f9fa;
+			border-radius: 15px;
+			padding: 30px 20px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			margin-bottom: 30px;
+		}
+
+		.faq-sidebar h4 {
+			color: #12223B;
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 25px;
+			padding-bottom: 15px;
+			border-bottom: 2px solid #FFB703;
+		}
+
+		.faq-categories-nav .nav-pills .nav-item {
+			margin-bottom: 10px;
+		}
+
+		.faq-categories-nav .nav-pills .nav-link {
+			background: white;
+			color: #12223B;
+			border: 2px solid #e5e7eb;
+			border-radius: 10px;
+			padding: 15px 20px;
+			font-weight: 600;
+			font-size: 14px;
+			text-align: left;
+			width: 100%;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.faq-categories-nav .nav-pills .nav-link:hover {
+			background: #FFB703;
+			color: white;
+			transform: translateX(5px);
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		}
+
+		.faq-categories-nav .nav-pills .nav-link.active {
+			background: #12223B;
+			color: white;
+			border-color: #12223B;
+			transform: translateX(5px);
+			box-shadow: 0 8px 20px rgba(18, 34, 59, 0.3);
+		}
+
+		.faq-categories-nav .nav-pills .nav-link i {
+			font-size: 16px;
+			width: 20px;
+			text-align: center;
+		}
+
+		/* FAQ Content Area */
+		.faq-content-area {
+			padding-left: 20px;
+		}
+
+		/* Mobile Responsive */
+		@media (max-width: 768px) {
+			.faq-content-area {
+				padding-left: 0;
+				margin-top: 30px;
+			}
+
+			.faq-categories-nav .nav-pills .nav-link {
+				font-size: 13px;
+				padding: 12px 15px;
+			}
+		}
+	</style>
 </head>
 <body>
 
@@ -61,7 +140,7 @@
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="index-4.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                                 <li class="nav-item submenu"><a class="nav-link" href="#">Company</a>
                                     <ul class="sub-menu">
                                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -133,36 +212,54 @@
                 </div>
             </div>
 
-            <!-- FAQ Categories Navigation Start -->
+            <!-- FAQ Layout with Sidebar Start -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="faq-categories-nav wow fadeInUp" data-wow-delay="0.25s">
-                        <ul class="nav nav-pills justify-content-center" id="faq-tabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="about-tab" data-bs-toggle="pill" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">About Us</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sourcing-tab" data-bs-toggle="pill" data-bs-target="#sourcing" type="button" role="tab" aria-controls="sourcing" aria-selected="false">Sourcing & Procurement</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="production-tab" data-bs-toggle="pill" data-bs-target="#production" type="button" role="tab" aria-controls="production" aria-selected="false">Production Unit</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="personalization-tab" data-bs-toggle="pill" data-bs-target="#personalization" type="button" role="tab" aria-controls="personalization" aria-selected="false">Product Personalization</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="logistics-tab" data-bs-toggle="pill" data-bs-target="#logistics" type="button" role="tab" aria-controls="logistics" aria-selected="false">Coordination & Logistics</button>
-                            </li>
-                        </ul>
+                <!-- FAQ Categories Sidebar Start -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="faq-sidebar wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="faq-categories-nav">
+                            <h4>FAQ Categories</h4>
+                            <ul class="nav nav-pills flex-column" id="faq-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="about-tab" data-bs-toggle="pill" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">
+                                        <i class="fas fa-info-circle"></i>
+                                        About Us
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sourcing-tab" data-bs-toggle="pill" data-bs-target="#sourcing" type="button" role="tab" aria-controls="sourcing" aria-selected="false">
+                                        <i class="fas fa-search"></i>
+                                        Sourcing & Procurement
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="production-tab" data-bs-toggle="pill" data-bs-target="#production" type="button" role="tab" aria-controls="production" aria-selected="false">
+                                        <i class="fas fa-industry"></i>
+                                        Production Unit
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="personalization-tab" data-bs-toggle="pill" data-bs-target="#personalization" type="button" role="tab" aria-controls="personalization" aria-selected="false">
+                                        <i class="fas fa-palette"></i>
+                                        Product Personalization
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="logistics-tab" data-bs-toggle="pill" data-bs-target="#logistics" type="button" role="tab" aria-controls="logistics" aria-selected="false">
+                                        <i class="fas fa-shipping-fast"></i>
+                                        Coordination & Logistics
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- FAQ Categories Navigation End -->
+                <!-- FAQ Categories Sidebar End -->
 
-            <!-- FAQ Content Start -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tab-content" id="faq-tabContent">
+                <!-- FAQ Content Start -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="faq-content-area">
+                        <div class="tab-content" id="faq-tabContent">
                         <!-- About Us Tab Start -->
                         <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
                             <div class="faq-accordion" id="aboutAccordion">
@@ -506,49 +603,16 @@
                         <!-- Coordination & Logistics Tab End -->
                     </div>
                     <!-- Tab Content End -->
+                    </div>
+                    <!-- FAQ Content Area End -->
                 </div>
             </div>
-            <!-- FAQ Content End -->
+            <!-- FAQ Layout with Sidebar End -->
         </div>
     </div>
     <!-- FAQ Section End -->
 
-    <!-- Custom CSS for FAQ Tabs -->
-    <style>
-        .faq-categories-nav {
-            margin-bottom: 50px;
-        }
 
-        .faq-categories-nav .nav-pills .nav-link {
-            background: transparent;
-            border: 2px solid #e5e5e5;
-            color: #666;
-            padding: 12px 25px;
-            margin: 0 10px 10px 0;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .faq-categories-nav .nav-pills .nav-link:hover,
-        .faq-categories-nav .nav-pills .nav-link.active {
-            background: #f91f2f;
-            border-color: #f91f2f;
-            color: white;
-        }
-
-        .tab-content {
-            margin-top: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .faq-categories-nav .nav-pills .nav-link {
-                margin: 0 5px 10px 0;
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
-    </style>
 
 
 

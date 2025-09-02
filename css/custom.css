@@ -523,7 +523,7 @@ header.main-header .header-sticky.active{
 	left: 0;
 	top: 100%;
 	overflow: hidden;
-	background-color: var(--accent-color);
+	background-color: var(--primary-color);
 	transition: all 0.3s ease-in-out;
 	text-align: left;
 }
@@ -553,7 +553,7 @@ header.main-header .header-sticky.active{
 }
 
 .main-menu ul ul li a:hover{
-	color: var(--primary-color);
+	color: var(--accent-color);
 	background-color: transparent;
 	padding: 8px 20px 8px 23px !important;
 }
@@ -624,7 +624,7 @@ header.main-header .header-sticky.active{
 	position: absolute;
     width: 100%;
 	padding: 0;
-	background: var(--accent-color);
+	background: var(--primary-color);
 }
 
 .slicknav_menu ul{
@@ -653,7 +653,7 @@ header.main-header .header-sticky.active{
 .slicknav_nav a:hover,
 .slicknav_nav .slicknav_row:hover{
 	background-color: transparent;
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 
 .slicknav_menu ul ul li a{
@@ -679,7 +679,7 @@ header.main-header .header-sticky.active{
 
 .slicknav_open > a .slicknav_arrow:after{
     transform: rotate(-180deg);
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 
 /************************************/
@@ -2399,6 +2399,25 @@ header.main-header .header-sticky.active{
 
 .service-images-slider{
 	margin-bottom: 30px;
+}
+
+.service-single-image{
+	margin-bottom: 30px;
+}
+
+.service-single-image .service-image-item{
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.service-single-image .service-image-item figure{
+	margin: 0;
+}
+
+.service-single-image .service-image-item img{
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 .service-image-item figure,
