@@ -1807,7 +1807,7 @@ header.main-header .header-sticky.active{
 	margin: 0 40px;
 	overflow: hidden;
 	border-radius: 40px;
-	background: url('../images/page-header-bg.jpg') no-repeat center center;
+	background: url('../images/page-header-bg.png') no-repeat center center;
 	background-size: cover;
 	padding: 220px 0 120px;
 	position: relative;
@@ -2528,7 +2528,7 @@ header.main-header .header-sticky.active{
 
 .service-benefit{
 	padding: 100px 0 70px;
-	background: url('../images/service-benefit-bg.jpg') no-repeat center center;
+	background: url('../images/service-benefit-bg.png') no-repeat center center;
 	background-size: cover;
 	position: relative;
 }

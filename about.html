@@ -140,6 +140,76 @@
 			min-width: 200px;
 			max-width: 300px;
 		}
+
+		/* Video Modal Styles */
+		.video-modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.9);
+			animation: fadeIn 0.3s ease;
+		}
+
+		.video-modal-content {
+			position: relative;
+			margin: 5% auto;
+			width: 90%;
+			max-width: 1122px;
+			background: transparent;
+		}
+
+		.video-modal-close {
+			position: absolute;
+			top: -40px;
+			right: 0;
+			color: white;
+			font-size: 35px;
+			font-weight: bold;
+			cursor: pointer;
+			z-index: 10000;
+		}
+
+		.video-modal-close:hover {
+			color: #ff6b35;
+		}
+
+		.video-iframe-container {
+			position: relative;
+			width: 100%;
+			border-radius: 15px;
+			overflow: hidden;
+			box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+		}
+
+		.video-iframe-container iframe {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16/9;
+			border: none;
+			display: block;
+		}
+
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+
+		/* Mobile responsive */
+		@media (max-width: 768px) {
+			.video-modal-content {
+				margin: 10% auto;
+				width: 95%;
+			}
+
+			.video-modal-close {
+				top: -35px;
+				font-size: 30px;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -415,7 +485,7 @@
 					<div class="intro-video-box" data-cursor-text="Play">
 						<!-- Video Image Start -->
 						<div class="video-image">
-							<a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video">
+							<a href="#" class="video-popup-trigger">
 								<figure class="image-anime">
 									<img src="images/video-bg.jpg" alt="">
 								</figure>
@@ -425,7 +495,7 @@
 
 						<!-- Video Play Button Start -->
 						<div class="video-play-button">
-							<a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video">
+							<a href="#" class="video-popup-trigger">
 								<i class="fa-solid fa-play"></i>
 							</a>
 						</div>
@@ -437,6 +507,17 @@
 		</div>
 	</div>
 	<!-- Intro Video Section End -->
+
+	<!-- Video Popup Modal Start -->
+	<div id="videoModal" class="video-modal">
+		<div class="video-modal-content">
+			<span class="video-modal-close">&times;</span>
+			<div class="video-iframe-container">
+				<iframe width="1122" height="631" src="https://www.youtube.com/embed/kbc8KrG9yhI" title="Racine mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- Video Popup Modal End -->
 
 	<!-- What We Do Section Start -->
 	 <div class="what-we-do">
@@ -782,6 +863,59 @@
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
 	<script src="../../assets/js/theme-panel.js"></script>
+
+	<!-- Video Modal Script -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const modal = document.getElementById('videoModal');
+			const triggers = document.querySelectorAll('.video-popup-trigger');
+			const closeBtn = document.querySelector('.video-modal-close');
+			const iframe = modal.querySelector('iframe');
+
+			// Open modal when clicking video triggers
+			triggers.forEach(trigger => {
+				trigger.addEventListener('click', function(e) {
+					e.preventDefault();
+					modal.style.display = 'block';
+					document.body.style.overflow = 'hidden'; // Prevent background scrolling
+				});
+			});
+
+			// Close modal when clicking close button
+			closeBtn.addEventListener('click', function() {
+				modal.style.display = 'none';
+				document.body.style.overflow = 'auto'; // Restore scrolling
+				// Stop video by reloading iframe src
+				const src = iframe.src;
+				iframe.src = '';
+				iframe.src = src;
+			});
+
+			// Close modal when clicking outside content
+			modal.addEventListener('click', function(e) {
+				if (e.target === modal) {
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+					// Stop video by reloading iframe src
+					const src = iframe.src;
+					iframe.src = '';
+					iframe.src = src;
+				}
+			});
+
+			// Close modal with Escape key
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape' && modal.style.display === 'block') {
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+					// Stop video by reloading iframe src
+					const src = iframe.src;
+					iframe.src = '';
+					iframe.src = src;
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>
