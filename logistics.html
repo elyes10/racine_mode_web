@@ -34,6 +34,119 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+
+	<!-- Service Responsible Card Styles -->
+	<style>
+		.service-responsible-card {
+			background: white;
+			border-radius: 20px;
+			padding: 30px;
+			box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+			text-align: center;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.service-responsible-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+		}
+
+		.responsible-image {
+			margin-bottom: 25px;
+		}
+
+		.responsible-image figure {
+			margin: 0;
+			border-radius: 15px;
+			overflow: hidden;
+		}
+
+		.responsible-image img {
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			border-radius: 15px;
+		}
+
+		.responsible-info h3 {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--primary-color);
+			margin-bottom: 8px;
+		}
+
+		.responsible-info .position {
+			font-size: 1rem;
+			color: var(--accent-color);
+			font-weight: 600;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.contact-links {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			align-items: center;
+		}
+
+		.linkedin-link, .email-link {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 12px 20px;
+			border-radius: 25px;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			font-weight: 500;
+		}
+
+		.linkedin-link {
+			background: #0077b5;
+			color: white;
+		}
+
+		.linkedin-link:hover {
+			background: #005885;
+			color: white;
+			transform: scale(1.05);
+		}
+
+		.email-link {
+			background: var(--accent-color);
+			color: white;
+		}
+
+		.email-link:hover {
+			background: var(--primary-color);
+			color: white;
+			transform: scale(1.05);
+		}
+
+		.contact-links i {
+			font-size: 1.2rem;
+		}
+
+		@media (max-width: 768px) {
+			.service-responsible-card {
+				padding: 20px;
+			}
+
+			.responsible-image img {
+				height: 250px;
+			}
+
+			.contact-links {
+				gap: 12px;
+			}
+
+			.linkedin-link, .email-link {
+				padding: 10px 16px;
+				font-size: 0.9rem;
+			}
+		}
+	</style>
 </head>
 <body>
 
@@ -174,15 +287,47 @@
 
                 <div class="col-lg-8">
                     <div class="service-single-content">
-                        <!-- Service Image Start -->
-                        <div class="service-single-image">
-                            <div class="service-image-item">
-                                <figure class="image-anime">
-                                    <img src="images/service-img-4.jpg" alt="Coordination & Logistics">
-                                </figure>
+                        <!-- Service Images Slider Start -->
+                        <div class="service-images-slider">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide 1 Start -->
+                                    <div class="swiper-slide">
+                                        <div class="service-image-item">
+                                            <figure class="image-anime">
+                                                <img src="images/service-img-4.jpg" alt="Coordination & Logistics">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 1 End -->
+
+                                    <!-- Slide 2 Start -->
+                                    <div class="swiper-slide">
+                                        <div class="service-image-item">
+                                            <figure class="image-anime">
+                                                <img src="images/logistics_slider1.png" alt="Logistics Process 1">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 2 End -->
+
+                                    <!-- Slide 3 Start -->
+                                    <div class="swiper-slide">
+                                        <div class="service-image-item">
+                                            <figure class="image-anime">
+                                                <img src="images/logistics_slider2.png" alt="Logistics Process 2">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 3 End -->
+                                </div>
+
+                                <!-- Navigation Arrows -->
+                                <div class="swiper-arrow-prev"></div>
+                                <div class="swiper-arrow-next"></div>
                             </div>
                         </div>
-                        <!-- Service Image End -->
+                        <!-- Service Images Slider End -->
 
                         <!-- Service Entry Content Start -->
                         <div class="service-entry">
@@ -223,59 +368,32 @@
             </div>
 
             <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <!-- Our FAQs Images Start -->
-                    <div class="our-faqs-images">
-                        <div class="row align-items-end">
-                            <div class="col-md-6 col-6">
-                                <!-- FAQs Img Start -->
-                                <div class="faqs-img-1">
-                                    <figure class="image-anime reveal">
-                                        <img src="images/our-faqs-img-1.png" alt="">
-                                    </figure>
-                                </div>
-                                <!-- FAQs Img End -->
-                            </div>
-                            <div class="col-md-6 col-6">
-                                <!-- FAQs Img Start -->
-                                <div class="faqs-img-2">
-                                    <figure class="image-anime reveal">
-                                        <img src="images/our-faqs-img-2.jpg" alt="">
-                                    </figure>
-                                </div>
-                                <!-- FAQs Img End -->
-                            </div>
+                <div class="col-lg-6">
+                    <!-- Service Responsible Card Start -->
+                    <div class="service-responsible-card">
+                        <div class="responsible-image">
+                            <figure class="image-anime reveal">
+                                <img src="images/logistics-responsible.jpg" alt="Logistics Manager">
+                            </figure>
                         </div>
-
-                        <div class="row align-items-start">
-                            <div class="col-md-6 col-6">
-                                <!-- FAQs Img Start -->
-                                <div class="faqs-img-1">
-                                    <figure class="image-anime reveal">
-                                        <img src="images/our-faqs-img-3.jpg" alt="">
-                                    </figure>
-                                </div>
-                                <!-- FAQs Img End -->
+                        <div class="responsible-info">
+                            <h3>Name at Name</h3>
+                            <p class="position">Logistics & Coordination Manager</p>
+                            <div class="contact-links">
+                                <a href="https://www.linkedin.com/company/racines-mode/" target="_blank" class="linkedin-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:logistics@racinemode.com" class="email-link">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>logistics@racinemode.com</span>
+                                </a>
                             </div>
-                            <div class="col-md-6 col-6">
-                                <!-- FAQs Img Start -->
-                                <div class="faqs-img-2">
-                                    <figure class="image-anime reveal">
-                                        <img src="images/our-faqs-img-4.jpg" alt="">
-                                    </figure>
-                                </div>
-                                <!-- FAQs Img End -->
-                            </div>
-                        </div>
-
-                        <div class="our-faqs-bulitup">
-                            <img src="images/icon-faq-bulitup.svg" alt="">
                         </div>
                     </div>
-                    <!-- Our FAQs Images End -->
+                    <!-- Service Responsible Card End -->
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                     <!-- FAQ Accordion Start -->
                     <div class="faq-accordion" id="accordion">
                         <!-- FAQ Item Start -->
